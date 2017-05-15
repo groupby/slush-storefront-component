@@ -3,12 +3,10 @@
   "description": "Slush generator for StoreFront components",
   "version": "0.0.0-development",
   "homepage": "https://github.com/groupby/slush-storefront-component",
-  "author": [
-    {
-      "name": "Ben Teichman",
-      "email": "ben.teichman@groupbyinc.com"
-    }
-  ],
+  "author": [{
+    "name": "Ben Teichman",
+    "email": "ben.teichman@groupbyinc.com"
+  }],
   "repository": {
     "type": "git",
     "url": "https://github.com/groupby/slush-storefront-component.git"
@@ -24,7 +22,7 @@
   },
   "scripts": {
     "start": "start-runner -p re-start/presets/es5",
-    "prepush": "yarn start prepush"
+    "prepush": "npm start prepush"
   },
   "release": {
     "verifyConditions": "condition-circle"

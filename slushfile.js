@@ -17,10 +17,6 @@ var _string = require('underscore.string');
 var inquirer = require('inquirer');
 var path = require('path');
 
-var scaffold = function(source, target, answers) {
-  return
-};
-
 gulp.task('default', function(done) {
   var prompts = [{
     name: 'componentName',
