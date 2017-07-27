@@ -52,11 +52,12 @@ gulp.task('default', function(done) {
         .pipe(rename(function(file) {
           if (file.dirname.match(/%component/)) {
             file.dirname = file.dirname.replace('%component', answers.component);
-          } else if (file.basename === '%component') {
+          }
+          if (file.basename === '%component') {
             file.basename = answers.component;
           }
-          if (file.dirname.match(/\/_/)) {
-            file.dirname = file.dirname.replace('/_', '/.');
+          if (file.dirname.match(/_/)) {
+            file.dirname = file.dirname.replace('_', '.');
           }
           if (file.basename[0] === '_') {
             file.basename = '.' + file.basename.slice(1);
