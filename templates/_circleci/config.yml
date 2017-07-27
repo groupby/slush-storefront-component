@@ -2,13 +2,13 @@ version: 2
 
 jobs:
   build:
-    working_directory: ~/<%= repository %>
+    working_directory: ~/storefront-<%= component %>
     docker:
       - image: kkarczmarczyk/node-yarn
     steps:
       - checkout
       - restore_cache:
-          key: <%= repository %>-{{ .Branch }}-{{ checksum "yarn.lock" }}
+          key: storefront-<%= component %>-{{ .Branch }}-{{ checksum "yarn.lock" }}
       - run:
           name: Dependencies
           command: yarn global add greenkeeper-lockfile@1
@@ -16,7 +16,7 @@ jobs:
           name: Install
           command: yarn
       - save_cache:
-          key: <%= repository %>-{{ .Branch }}-{{ checksum "yarn.lock" }}
+          key: storefront-<%= component %>-{{ .Branch }}-{{ checksum "yarn.lock" }}
           paths:
             - ~/node_modules
       - run:

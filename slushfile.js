@@ -50,12 +50,14 @@ gulp.task('default', function(done) {
       gulp.src(path.join(__dirname, 'templates', '**', '*'))
         .pipe(template(answers, { interpolate: /<%=([\s\S]+?)%>/g }))
         .pipe(rename(function(file) {
-          if (file.dirname.match(/%component/)) {
+          if (file.dirname.test(/%component/)) {
             file.dirname = file.dirname.replace('%component', answers.component);
           } else if (file.basename === '%component') {
             file.basename = answers.component;
           }
-          if (file.basename[0] === '_') {
+          if (file.dirname.test(/\/_/)) {
+            file.dirname = file.dirname.replace('/_', '/.');
+          } else if (file.basename[0] === '_') {
             file.basename = '.' + file.basename.slice(1);
           }
           if (file.basename[0] === '-') {
