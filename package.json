@@ -41,19 +41,19 @@
     "gulp-conflict": "^0.4.0",
     "gulp-install": "^1.1.0",
     "gulp-rename": "^1.2.0",
-    "gulp-template": "^4.0.0",
+    "gulp-template": "^5.0.0",
     "iniparser": "^1.0.5",
-    "inquirer": "^3.0.0",
+    "inquirer": "^5.0.1",
     "slush": ">=1.0.0",
     "underscore.string": "^3.3.4"
   },
   "devDependencies": {
-    "condition-circle": "^1.5.0",
+    "condition-circle": "^2.0.1",
     "cz-conventional-changelog": "^2.0.0",
     "eslint": "^4.0.0",
     "eslint-config-tough": "^0.4.0",
     "re-start": "^1.12.2",
-    "semantic-release": "^6.3.6",
+    "semantic-release": "^12.4.1",
     "start-simple-cli": "^4.1.1"
   }
 }
